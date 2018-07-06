@@ -13,10 +13,6 @@ def create_new_post(user, post)
 
   response_hash = JSON.parse(response)
 
-  # Check if correct user is returned
-  # assert_equal(randomContent, response_hash['content'], 'Content is not correct')
-  # assert_equal(randomTitle, response_hash['title'], 'Title is not correct')
-  #
   post.id = response_hash['id']
   post.content = response_hash['content']
   post.title = response_hash['title']
@@ -49,9 +45,4 @@ def update_post(user, post)
                      payload: payload)
 
   assert_status_code(403, response, "Post cannot be updated")
-  #
-  # response_hash = JSON.parse(response)
-  #
-  # assert_equal(post.content, response_hash['content'], 'Content is not correct')
-  # assert_equal(post.titleUpdated, response_hash['title'], 'Title is not updated')
 end

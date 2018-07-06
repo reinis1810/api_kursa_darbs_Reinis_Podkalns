@@ -6,7 +6,6 @@ def check_profile_info(user)
                      cookies: {})
 
   # Check if 200 OK is received
-  # assert_equal(200, response.code, "Failed to Check profile info. Response: #{response}")
   assert_status_code(200, response, "Profile check")
 
   response_hash = JSON.parse(response)
