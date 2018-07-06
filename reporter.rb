@@ -8,7 +8,7 @@ job_build_url = ARGV[2].to_s + 'cucumber-html-reports/overview-features.html'
 report_file = File.read('report.json')
 report_hash = JSON.parse(report_file)
 
-passedCount = report_hash.select{|report_hash| report_hash['elements']['steps']}
+passedCount = report_hash.detect{|report_hash| report_hash['elements']['steps']}.count
 
 
 
