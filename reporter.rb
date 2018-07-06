@@ -11,8 +11,6 @@ report_hash = JSON.parse(report_file)
 # passed = |scenario| obj[“elements”].first[“steps”].last[“results”][“status”]=“passed”).count
 # passed = obj['elements'].first['steps'].last['results']['status']='passed'
 
-puts passed
-
 thumbnail = { 'url' => 'https://imgflip.com/s/meme/Leonardo-Dicaprio-Cheers.jpg' }
 
 fields = []
