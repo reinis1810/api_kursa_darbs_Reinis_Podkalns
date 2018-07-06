@@ -10,7 +10,7 @@ report_hash = JSON.parse(report_file)
 
 # passed = obj|scenario| (['elements'].first['steps'].last['results']['status']='passed').count
 # passed = obj['elements'].first['steps'].last['results']['status']='passed'
-passedCount = @report_hash.select{|report_hash| report_hash["elements"]["steps"].count}
+passedCount = @report_hash.select{|report_hash| report_hash["elements"]["steps"]}.count
 
 
 
