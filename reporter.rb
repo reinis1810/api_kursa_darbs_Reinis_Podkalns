@@ -19,6 +19,8 @@ report_hash.each do |report_hash|
   end
 end
 
+passRate = passedCountPassed / passedCountPassed + passedCountFailed * 100
+
 thumbnail = { 'url' => 'https://imgflip.com/s/meme/Leonardo-Dicaprio-Cheers.jpg' }
 
 fields = []
@@ -30,11 +32,18 @@ fields.push({'name' => 'Build number', 'value' => job_number})
 fields.push({'name' => 'Build URL', 'value' => job_build_url})
 fields.push({'name' => 'Passed', 'value' => passedCountPassed})
 fields.push({'name' => 'Failed', 'value' => passedCountFailed})
+fields.push({'name' => 'Rate', 'value' => passRate})
 
 embed = []
 
-embed.push('title' => 'Test title',
-           'color' => 16007746,
+if passRate > 0
+  resultColor = 6624478
+else
+  resultColor = 16007746
+end
+
+embed.push('title' => 'Kursa darbs',
+           'color' => resultColor,
            'thumbnail' => thumbnail,
            'fields' => fields)
 
