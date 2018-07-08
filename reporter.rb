@@ -32,12 +32,12 @@ fields.push({'name' => 'Build number', 'value' => job_number})
 fields.push({'name' => 'Build URL', 'value' => job_build_url})
 fields.push({'name' => 'Passed', 'value' => passedCountPassed})
 fields.push({'name' => 'Failed', 'value' => passedCountFailed})
-fields.push({'name' => 'Rate', 'value' => passRate})
+fields.push({'name' => 'Rate', 'value' => passRate.to_s + '%'})
 
 embed = []
 
 if passRate > 0
-  resultColor = 6924466
+  resultColor = 1823218
 else
   resultColor = 16007746
 end
