@@ -8,7 +8,12 @@ job_build_url = ARGV[2].to_s + 'cucumber-html-reports/overview-features.html'
 report_file = File.read('report.json')
 report_hash = JSON.parse(report_file)
 
-passedCount = report_hash.each do |report_hash| report_hash['elements'].first['steps'].last["result"]["status"].count end
+passedCount = 0
+
+report_hash.each do |report_hash|
+  report_hash['elements'].first['steps'].last["result"]["status"]
+  passedCount = passedCount + 1
+end
 
 thumbnail = { 'url' => 'https://imgflip.com/s/meme/Leonardo-Dicaprio-Cheers.jpg' }
 
