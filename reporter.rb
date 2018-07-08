@@ -12,12 +12,12 @@ passedCountPassed = 0
 passedCountFailed = 0
 
 report_hash.each do |report_hash|
-  report_hash['elements'].first['steps'].last["result"]["status"] = "passed"
+  report_hash['elements'].first['steps'].last["result"]["status"] == "passed"
   passedCountPassed = passedCountPassed + 1
 end
 
 report_hash.each do |report_hash|
-  report_hash['elements'].first['steps'].last["result"]["status"] = "failed"
+  report_hash['elements'].first['steps'].last["result"]["status"] == "failed"
   passedCountFailed = passedCountFailed + 1
 end
 
