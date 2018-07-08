@@ -12,13 +12,10 @@ passedCountPassed = 0
 passedCountFailed = 0
 
 report_hash.each do |report_hash|
-  report_hash['elements'].first['steps'].last["result"]["status"] == "passed"
-  passedCountPassed = passedCountPassed + 1
-end
-
-report_hash.each do |report_hash|
-  report_hash['elements'].first['steps'].last["result"]["status"] == "failed"
-  passedCountFailed = passedCountFailed + 1
+  if report_hash['elements'].first['steps'].last["result"]["status"] == "passed"
+    passedCountPassed = passedCountPassed + 1
+  else
+    passedCountFailed = passedCountFailed + 1
 end
 
 thumbnail = { 'url' => 'https://imgflip.com/s/meme/Leonardo-Dicaprio-Cheers.jpg' }
