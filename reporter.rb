@@ -16,6 +16,7 @@ report_hash.each do |report_hash|
     passedCountFailed = passedCountFailed + 1
   else
     passedCountPassed = passedCountPassed + 1
+  end
 end
 
 thumbnail = { 'url' => 'https://imgflip.com/s/meme/Leonardo-Dicaprio-Cheers.jpg' }
