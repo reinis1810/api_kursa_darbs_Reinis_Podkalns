@@ -5,12 +5,10 @@ job_name = ARGV[0]
 job_number = ARGV[1]
 job_build_url = ARGV[2].to_s + 'cucumber-html-reports/overview-features.html'
 
-# report_file = File.read('report.json')
-# report_hash = JSON.parse(report_file)
-#
-# passedCount = report_hash.detect{|report_hash| report_hash['elements']['steps'].count}
+report_file = File.read('report.json')
+report_hash = JSON.parse(report_file)
 
-
+passedCount = report_hash.each do |report_hash| report_hash['elements'].first['steps'].last["result"]["status"].count end
 
 thumbnail = { 'url' => 'https://imgflip.com/s/meme/Leonardo-Dicaprio-Cheers.jpg' }
 
@@ -21,7 +19,7 @@ fields.push({'name' => 'Mērķis', 'value' => 'Rest kurss'})
 fields.push({'name' => 'Job', 'value' => job_name})
 fields.push({'name' => 'Build number', 'value' => job_number})
 fields.push({'name' => 'Build URL', 'value' => job_build_url})
-# fields.push({'name' => 'Test', 'value' => passedCount})
+fields.push({'name' => 'Test', 'value' => passedCount})
 
 embed = []
 
