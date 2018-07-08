@@ -19,7 +19,7 @@ report_hash.each do |report_hash|
   end
 end
 
-passRate = passedCountPassed / passedCountPassed + passedCountFailed * 100
+passRate = (passedCountPassed / passedCountPassed + passedCountFailed) * 100
 
 thumbnail = { 'url' => 'https://imgflip.com/s/meme/Leonardo-Dicaprio-Cheers.jpg' }
 
@@ -37,7 +37,7 @@ fields.push({'name' => 'Rate', 'value' => passRate})
 embed = []
 
 if passRate > 0
-  resultColor = 6624478
+  resultColor = 6924466
 else
   resultColor = 16007746
 end
